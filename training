@@ -13,7 +13,12 @@ find "$PWD" -type f -exec echo -e "\n--- FILE: {} ---" \; -exec cat {} \;
     |   `-- service.yaml
     |-- kustomization.yaml
     `-- overlays
-        `-- dev
+        |-- dev
+        |   |-- deployment-patch.yaml
+        |   |-- kustomization.yaml
+        |   |-- namespace.yaml
+        |   `-- service-patch.yaml
+        `-- int
             |-- deployment-patch.yaml
             |-- kustomization.yaml
             |-- namespace.yaml
