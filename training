@@ -5,3 +5,57 @@ sudo mv kustomize /usr/local/bin/
 ---
 
 
+my-kustomize/
+|-- base
+|   |-- deployment.yaml
+|   |-- kustomization.yaml
+|   `-- service.yaml
+`-- kustomization.yaml
+
+--- FILE: /root/my-kustomize/kustomization.yaml ---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./base
+
+--- FILE: /root/my-kustomize/base/kustomization.yaml ---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - deployment.yaml
+  - service.yaml
+
+--- FILE: /root/my-kustomize/base/deployment.yaml ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+
+--- FILE: /root/my-kustomize/base/service.yaml ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
+
