@@ -14,3 +14,27 @@ my-kustomize/
     └── dmzprod/
         ├── kustomization.yaml
         └── replica-patch.yaml
+
+###
+my-kustomize/kustomization.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - overlays/dev
+  - overlays/test
+  - overlays/prod
+
+###
+
+my-kustomize/overlays/dev/kustomization.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+patches:
+  - path: replica-patch.yaml
