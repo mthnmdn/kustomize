@@ -13,5 +13,4 @@ spec:
   sourceRepos:
   - '*'
   sourceNamespaces:
-    - dev
-    - int
+    - dev-1
