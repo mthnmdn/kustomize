@@ -1,3 +1,5 @@
+# Argo CD'de yaratıldığında argocd-bootstrap repo'sundaki applicaton tanımlarını oluşturur.
+# Oluşan application tanımları example-app ve example-app-2 repo'larını deploy eder.
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
