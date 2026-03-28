@@ -4,4 +4,4 @@ metadata:
   name: my-app-service
 spec:
   selector:
-    app: deploy-dev
+    app: deploy-prod

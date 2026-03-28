@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: deploy-int
+      app: deploy-prod
   template:
     metadata:
       labels:
-        app: deploy-int
+        app: deploy-prod
