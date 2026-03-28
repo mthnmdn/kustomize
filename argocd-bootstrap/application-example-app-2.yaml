@@ -4,7 +4,7 @@ metadata:
   name: example-app-2
   namespace: argocd 
 spec:
-  project: default
+  project: appproject-prep-prod
   source:
     repoURL: https://github.com/mthnmdn/kustomize.git
     targetRevision: HEAD 
