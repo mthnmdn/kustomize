@@ -13,5 +13,4 @@ spec:
   sourceRepos:
   - '*'
   sourceNamespaces:
-    - prep
-    - prod
+    - prep-1
