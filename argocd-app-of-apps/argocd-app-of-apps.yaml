@@ -12,4 +12,7 @@ spec:
     targetRevision: HEAD 
     path: argocd-bootstrap
   destination:
-    server: https://kubernetes.default.svc 
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      enabled: true
