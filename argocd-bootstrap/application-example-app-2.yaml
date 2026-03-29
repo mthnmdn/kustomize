@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: example-app-2
-  namespace: prep-1
+  namespace: argocd
 spec:
   project: appproject-prep-prod
   source:
