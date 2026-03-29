@@ -1,5 +1,6 @@
 # Argo CD'de yaratıldığında argocd-bootstrap repo'sundaki applicaton tanımlarını oluşturur.
 # Oluşan application tanımları example-app ve example-app-2 repo'larını deploy eder.
+# v2.14 için yazıldı.
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -15,4 +16,5 @@ spec:
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-      enabled: true
+      prune: true
+      selfHeal: true
